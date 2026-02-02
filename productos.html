@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuestros Productos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="productos.css">
+    <script src="server/models/productos.js" defer></script>
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">⚡ SOLAR</div>
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Nuestros Clientes</a>
+        <a href="#">Contáctenos</a>
+    </nav>
+</header>
+
+<section class="productos">
+    <h1>NUESTROS PRODUCTOS</h1>
+
+    <div class="filtros">
+           <select id="categoria">
+            <option value="all">Categorías</option>
+            <option value="panel">Paneles</option>
+            <option value="lamparas">Lámparas</option>
+            <option value="baterias">Baterías</option>
+        </select>
+
+        <input type="text" id="buscar" placeholder="Buscar producto">
+    </div>
+
+
+   <div id="gridProductos" class="grid-productos"></div>
+
+</section>
+
+<footer class="footer">
+    <div>
+        <h4>QUIÉNES SOMOS</h4>
+        <p>Empresa dedicada a soluciones solares.</p>
+    </div>
+
+    <div>
+        <p>📧 iluminacionsolar@gmail.com</p>
+        <p>📱 312 400 0000</p>
+    </div>
+</footer>
+
+</body>
+</html>

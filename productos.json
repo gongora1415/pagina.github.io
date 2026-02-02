@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1767639200,
+        "nombre": "Panel Solar 150W",
+        "precio": 500,
+        "categoria": "paneles",
+        "descripcion": "panel de alta calidad",
+        "imagen": "uploads\/1767639200_farola.png"
+    },
+    {
+        "id": 1767639230,
+        "nombre": "Batería Solar",
+        "precio": 10000000,
+        "categoria": "baterias",
+        "descripcion": "bateria de gran capacidad",
+        "imagen": "uploads\/1767639230_rr.png"
+    },
+    {
+        "id": 1767639261,
+        "nombre": "bombilla led ",
+        "precio": 500,
+        "categoria": "lamparas",
+        "descripcion": "lampara con luz ecologica\r\n",
+        "imagen": "uploads\/1767639261_44.png"
+    },
+    {
+        "id": 1767639325,
+        "nombre": "Panel Solar 150W",
+        "precio": 500,
+        "categoria": "paneles",
+        "descripcion": "panel de alta capacidad de carga",
+        "imagen": "uploads\/1767639325_4.png"
+    }
+]

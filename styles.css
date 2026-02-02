@@ -1,0 +1,400 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+
+#productos,
+#clientes,
+#contacto {
+    scroll-margin-top: 100px; 
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.barra.scrolled {
+    background: linear-gradient(to right, #11111144, #00000036);
+
+    transition: background 0.3s ease;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.151);
+}
+
+
+
+
+
+.body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right, #000000, #121313);   
+}
+
+
+.barra {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+     background: linear-gradient(to right, #595e6400, #0a0a0a00);
+    color: white;
+    border-radius: 6px;
+    list-style: none;
+}
+
+
+.btnprod {
+    background: linear-gradient(to right, #111111, rgb(0, 162, 255));
+    color: white;
+    border: solid rgb(0, 162, 255);
+    padding: 10px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.btncli {
+    background: linear-gradient(to right, #111111,  rgb(0, 162, 255));
+    color: white;
+    border: solid rgb(0, 162, 255);
+    padding: 10px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+
+.logo {
+    margin-right: auto;
+    font-size: 24px;
+}
+
+.menu-centro {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+
+.shop {
+    margin-left: auto;
+    font-size: 20px;
+}
+
+.ti{
+
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    color: rgb(0, 162, 255);
+}
+
+.main {
+    flex: 1;
+   background-image: url(img/fondo1.png);
+    background-size: cover;      
+    background-repeat: no-repeat;  
+    background-position: center;   
+    
+    min-height: 100vh;             
+    
+    display: flex;
+    align-items: center;
+}
+
+.Productos{
+
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+/* CONTENEDOR GENERAL */
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+.slider-ventana {
+    width: 660px;
+    overflow: hidden;
+}
+
+.slider-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.4s ease;
+    will-change: transform;
+
+}
+
+.slider-track img {
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 50px;
+        
+    border: 5px solid rgb(0, 162, 255);
+    
+}
+
+
+/*flechas*/
+
+.flecha {
+    border: none;
+    background: #ccecff;
+    font-size: 24px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.btnprod,
+.btncli {
+    display: block;
+    margin: 20px auto;   
+    padding: 10px 20px;
+    
+}
+
+
+
+.clientes{
+
+     text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-top: 40px ;
+
+}
+
+.txt {
+    color: aliceblue;
+    background: #4240403b;
+    margin: 50px;
+    padding: 10px;
+}
+
+.fin {
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    list-style: none;
+
+
+}
+
+
+.parte3 {
+    flex: 1;
+    background-image: url(img/fond2.png);
+    background-size: cover;      
+    background-repeat: no-repeat;  
+    background-position: center;   
+    
+    min-height: 100vh;             
+    
+    display: flex;
+    align-items: center;
+}
+
+
+footer {
+    background:  rgb(0, 162, 255);
+    color: rgb(12, 12, 12);
+    text-align: center;
+    padding: 15px;
+    border: solid 10px #000000;
+}
+
+
+.img-container {
+    display: flex;           
+    justify-content: start; 
+    gap: 20px;               
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.img-item {
+    width: 200px;
+    height: 200px;           
+    object-fit: cover;
+}
+
+/* farola*/
+.escena {
+    position: relative;
+    height: 100vh;
+    background: #000;
+    overflow: hidden;
+}
+
+
+/* FAROLA */
+.farola-wrapper {
+    position: absolute;
+    left: -35vh; 
+    bottom: 0;
+    height: 70vh;
+    transition: left 1.6s ease;
+}
+
+.luz,
+.halo,
+.texto {
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
+
+
+.escena.activa .farola-wrapper {
+    left: 40px;
+}
+
+.escena.activa .luz,
+.escena.activa .halo,
+.escena.activa .texto {
+    opacity: 1;
+}
+
+
+.farola {
+    height: 100%;
+}
+
+
+/* LUZ */
+.luz {
+    position: absolute;
+
+    left: 52%;
+    top: -60px;
+
+    width: 700px;
+    height: 280px;
+
+    background: linear-gradient(
+        to right,
+        rgba(255,240,200,0.25),
+        rgba(255,240,200,0.12),
+        rgba(255,240,200,0.04),
+        transparent
+    );
+
+    clip-path: polygon(
+        0 50%,
+        100% 20%,
+        90% 120%,
+        0 50%
+    );
+
+    filter: blur(2px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.2s ease 0.6s;
+}
+
+
+
+.escena.activa .luz {
+    opacity: 1;
+}
+
+.halo {
+    position: absolute;
+
+    left: 52%;
+    top: 8%;
+
+    width: 70px;
+    height: 75px;
+
+    background: radial-gradient(
+        circle,
+        rgba(255,245,220,0.9),
+        rgba(255,245,220,0.4),
+        transparent 70%
+    );
+
+    transform: translate(-50%, -50%);
+    filter: blur(6px);
+    opacity: 0;
+    transition: opacity 1.2s ease 0.6s;
+}
+
+
+
+
+.escena.activa .halo {
+    opacity: 1;
+}
+
+
+.luz, .halo {
+    opacity: 0;
+    transition: opacity 1.5s ease 0.6s;
+}
+
+.escena.activa .luz,
+.escena.activa .halo {
+    opacity: 1;
+}
+
+
+.texto {
+    position: absolute;
+
+    left: 500px;     
+    top: 42%;
+
+    color: white;
+    font-size: 2rem;
+
+    opacity: 0;
+    transition: opacity 1.2s ease 0.8s;
+}
+
+.escena.activa .texto {
+    opacity: 1;
+}
+
+

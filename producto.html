@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Detalle del Producto</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+.contenedor {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #1c1c1c;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.producto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.producto img {
+    width: 100%;
+    border-radius: 15px;
+    background: #fff;
+}
+
+.info h1 {
+    margin-top: 0;
+}
+
+.precio {
+    font-size: 22px;
+    color: #4fc3f7;
+    margin: 10px 0;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    background: #4fc3f7;
+    color: #000;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .producto {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="contenedor">
+    <div id="detalleProducto"></div>
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+fetch("productos.json?v=" + Date.now())
+  .then(res => res.json())
+  .then(productos => {
+    const producto = productos.find(p => String(p.id) === String(id));
+    const contenedor = document.getElementById("detalleProducto");
+
+    if (!producto) {
+      contenedor.innerHTML = "<h2>Producto no encontrado</h2>";
+      return;
+    }
+
+    contenedor.innerHTML = `
+      <div class="producto">
+        <img src="${producto.imagen}">
+        <div class="info">
+          <h1>${producto.nombre}</h1>
+          <div class="precio">$${Number(producto.precio).toLocaleString()}</div>
+          <p>${producto.descripcion || ""}</p>
+
+          <a class="btn"
+             href="https://wa.me/573124000000?text=Hola, me interesa el producto ${producto.nombre}">
+             Contactar por WhatsApp
+          </a>
+        </div>
+      </div>
+    `;
+  });
+</script>
+
+
+
+
+</body>
+</html>
